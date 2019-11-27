@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Now Playing</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href=".\bootstrap.min.css"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://material.io/resources/icons/?style=baseline">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+	
+	</head>
+
+	<script language="JavaScript" type="text/javascript" >
+   
+   
+  //1st endpoint*******   trending
+     
+  var settings = {
+  
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.themoviedb.org/3/trending/all/day?api_key=999ab887b2bbe82412ff81f449b32c8f",
+    "method": "GET",
+    "headers": {},
+    "data": "{}"
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+    document.getElementById("jpg1").src="http://image.tmdb.org/t/p/w185/"+response .results[8].poster_path;
+    document.getElementById("jpg2").src="http://image.tmdb.org/t/p/w185/"+response .results[3].poster_path;
+
+//       document.getElementById("name1").innerHTML=response .results[10].title;
+//   document.getElementById("img1").src="http://image.tmdb.org/t/p/w185/"+response .results[10].poster_path;
+//   document.getElementById("desc1").innerHTML="Description:" +'<br/>'+response .results[10].overview;
+// document.getElementById("rate1").innerHTML="IMDB RATING: " +response .results[10].vote_average;
+
+
+
+//   document.getElementById("name2").innerHTML=response .results[1].title;
+//   document.getElementById("img2").src="http://image.tmdb.org/t/p/w185/"+response .results[1].poster_path;
+//   document.getElementById("desc2").innerHTML="Description:" +'<br/>'+response .results[1].overview;
+//  document.getElementById("rate2").innerHTML="IMDB RATING: " +response .results[1].vote_average;
+
+
+
+
+ 
+  });
+ //end of 1st endpoint*****
+
+
+ //2nd endpoint********top rated
+ var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.themoviedb.org/3/movie/top_rated?page=1&language=en-US&api_key=999ab887b2bbe82412ff81f449b32c8f",
+  "method": "GET",
+  "headers": {},
+  "data": "{}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  //document.getElementById("jpg4").src="http://image.tmdb.org/t/p/w185/"+response .results[0].poster_path;
+  document.getElementById("jpg3").src="http://image.tmdb.org/t/p/w185/"+response .results[13].poster_path;
+
+  
+        document.getElementById("name111").innerHTML=response .results[11].title;
+  document.getElementById("img111").src="http://image.tmdb.org/t/p/w185/"+response .results[11].poster_path;
+  document.getElementById("desc111").innerHTML="Description:" +'<br/>'+response .results[11].overview;
+  document.getElementById("rate111").innerHTML="IMDB RATING: " +response .results[11].vote_average;
+
+
+  document.getElementById("name222").innerHTML=response .results[18].title;
+  document.getElementById("img222").src="http://image.tmdb.org/t/p/w185/"+response .results[18].poster_path;
+  document.getElementById("desc222").innerHTML="Description:" +'<br/>'+response .results[18].overview;
+  document.getElementById("rate222").innerHTML="IMDB RATING: " +response .results[18].vote_average;
+
+
+  document.getElementById("name333").innerHTML=response .results[12].title;
+  document.getElementById("img333").src="http://image.tmdb.org/t/p/w185/"+response .results[12].poster_path;
+  document.getElementById("desc333").innerHTML="Description:" +'<br/>'+response .results[12].overview;
+  document.getElementById("rate333").innerHTML="IMDB RATING: " +response .results[12].vote_average;
+
+  
+  
+  document.getElementById("name444").innerHTML=response .results[8].title;
+  document.getElementById("img444").src="http://image.tmdb.org/t/p/w185/"+response .results[8].poster_path;
+  document.getElementById("desc444").innerHTML="Description:" +'<br/>'+response .results[8].overview;
+  document.getElementById("rate444").innerHTML="IMDB RATING: " +response .results[8].vote_average;
+});
+//end of 2nd endpoint******
+
+
+
+//3rd endpoint*******now playing
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=999ab887b2bbe82412ff81f449b32c8f",
+    "method": "GET",
+    "headers": {},
+    "data": "{}"
+  }
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+
+
+
+  });
+  //end of 3rd endpoint*****
+
+
+//4th endpoint*****upcoming
+
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.themoviedb.org/3/movie/upcoming?page=1&language=en-US&api_key=999ab887b2bbe82412ff81f449b32c8f",
+  "method": "GET",
+  "headers": {},
+  "data": "{}"
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+
+  // document.getElementById("jpg7").src="http://image.tmdb.org/t/p/w185/"+response .results[14].poster_path;
+  // document.getElementById("jpg8").src="http://image.tmdb.org/t/p/w185/"+response .results[8].poster_path;
+
+});
+//end of 4th endpoint*****
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script> 
+	<body class="no-sidebar">
+
+		<!-- Header -->
+		<div id="header" class="bg1">
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">Cinema House</a></h1>
+					<span>All about your favourite movies!</span>
+				</div>
+				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li ><a href="index.html">Homepage</a></li>
+						<li class="active"><a href="nowplaying.html">Now Playing</a></li>
+						<li><a href="toprated.html">Top Rated</a></li>
+						<li ><a href="upcoming.html">Up Coming</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row"> 
+					
+					<!-- Content -->
+					<div id="content" class="12u skel-cell-important" >
+						<section>
+							<header>
+								<h2>Now Playing Movies</h2>
+								<span class="byline">Which is your favourite movie this month?</span>
+							</header>
+							<a href="#" class="image full"><img id="jpg4" src="https://images.alphacoders.com/546/thumb-1920-546685.jpg" alt="" /></a>
+
+							<div>
+						
+							<div class="container justify-content-between d-flex row pt-5">
+
+								<div class="trending1 pr-2 col-3 ">
+									<div class="p-2" > <img id="img111"> </div>
+									<div class="">
+										<h3 id="name111"></h3> <br>
+										<p id="desc111"> </p> <br>
+										<p id="rate111"> </p>
+									</div>
+								</div>
+
+								<div class="trending pr-2 col-3">
+									<div class="p-2" > <img id="img222"> </div>
+									<div class=""><h3 id="name222"></h3><br><p id="desc222"> </p> <br>
+										<p id="rate222"> </p> </div>
+								</div>
+
+
+								<div class="trending pr-2 col-3">
+									<div class="p-2"> <img id="img333"> </div>
+									<div class=""><h3 id="name333"></h3><br><p id="desc333"> </p> <br>
+										<p id="rate333"> </p></div>
+								</div>
+
+								<div class="trending pr-2  col-3">
+									<div class="p-2"> <img id="img444"> </div>
+									<div class=""><h3 id="name444"></h3><br><p id="desc444"> </p><br>
+										<p id="rate444"> </p> </div>
+								</div>
+<!-- 
+
+								<div class="trending pr-2  col-3">
+									<div class="p-2"> <img id="img5"> </div>
+									<div class=""><h3 id="name5"></h3><br><p id="desc5"> </p> </div>
+								</div>
+
+
+								<div class="trending pr-2 col-3">
+									<div class="p-2"> <img id="img6"> </div>
+									<div class=""><h3 id="name6"></h3><br><p id="desc6"> </p> </div>
+								</div> -->
+
+							</div>
+						</div>
+
+						
+	
+
+
+						</section>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="featured">
+			<div class="container">
+				<div class="row">
+					<div class="4u">
+						<h2>Now-Playing Movies</h2>
+						<a href="#" class="image full"><img id="jpg1" alt="" /></a>
+						<p>All your favourite!</p>
+						<p><a href="nowplaying.html" class="button">More Details</a></p>
+					</div>
+					<div class="4u">
+						<h2>Top-Rated Movies</h2>
+						<a href="#" class="image full"><img id="jpg2" alt="" /></a>
+						<p>Trust others. Trust the ratings.</p>
+						<p><a href="toprated.html" class="button">More Details</a></p>
+					</div>
+					<div class="4u">
+						<h2>Up-coming Movies</h2>
+						<a href="#" class="image full"><img id="jpg3" alt="" /></a>
+						<p>Get to know about upcoming movies in advance!</p>
+						<p><a href="upcoming.html" class="button">More Details</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="4u">
+						<section>
+							<h2>Latest Posts</h2>
+							<ul class="default">
+								<li><a href="#">Parasite</a></li>
+								<li><a href="#">Angel has fallen</a></li>
+								<li><a href="#">Once upon a time in America</a></li>
+								
+								<li><a href="#">Joker</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="4u">
+						<section>
+							<h2> New Review Posts</h2>
+							<ul class="default">
+								<li><a href="#">Trending - Sunday, 12 pm</a></li>
+								<li><a href="#">Upcoming Movies - Monday, 2pm</a></li>
+								<li><a href="#">Now Playing - Wednesday, 11 am</a></li>
+								<li><a href="#">Top rated Movies - Friday, 12 am</a></li>
+								
+							</ul>
+						</section>
+					</div>
+					<div class="4u">
+						<section>
+							<h2>Contact Us</h2>
+							<ul class="default">
+								<li><a href="#">782452699</a></li>
+								<li><a href="#">pranavsachdeva2000@gmail.com</a></li>
+								<li><a href="#">Instagram - @pranav.sachdeva</a></li>
+							<!-- 	<li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+								<li><a href="#">Maecenas vitae orci feugiat eleifend</a></li> -->
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				Copyright@PranavSachedva <a href="http://pranavsachdeva.github.io"> View my Resume</a> 
+			</div>
+		</div>
+		
+	</body>
+</html>
